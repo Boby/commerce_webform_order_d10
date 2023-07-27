@@ -1255,8 +1255,12 @@ class CommerceWebformOrderHandler extends WebformHandlerBase {
     if (!empty($properties)) {
       try {
         // Return the same value if it is an element value.
-        if (strpos($value, ':input') !== FALSE) {
-          return $value;
+        if (is_array($value)) {
+          foreach ($value as $element) {
+              if (is_string($element) && strpos($element, ':input') !== false) {
+                  return $element;
+              }
+          }
         }
 
         if (empty($value) && $value !== '0') {
