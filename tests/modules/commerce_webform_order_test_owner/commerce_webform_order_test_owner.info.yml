@@ -1,0 +1,9 @@
+name: Commerce Webform Order module test owner
+description: Support module for Commerce Webform Order module testing.
+package: Testing
+
+core_version_requirement: ^8.8 || ^9 || ^10
+type: module
+
+dependencies:
+  - commerce_webform_order:commerce_webform_order
